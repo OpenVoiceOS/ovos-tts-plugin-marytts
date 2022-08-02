@@ -24,6 +24,16 @@ class MaryTTS(RemoteTTS):
         params['INPUT_TEXT'] = sentence.encode('utf-8')
         return params
 
+    @property
+    def available_languages(self) -> set:
+        """Return languages supported by this TTS implementation in this state
+        This property should be overridden by the derived class to advertise
+        what languages that engine supports.
+        Returns:
+            set: supported languages
+        """
+        return set(MaryTTSPluginConfig.keys())
+
 
 class MaryTTSValidator(TTSValidator):
     def __init__(self, tts):
