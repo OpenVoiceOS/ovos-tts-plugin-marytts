@@ -61,89 +61,89 @@ class MaryTTSValidator(TTSValidator):
 MaryTTSPluginConfig = {
     'de': [
         {'display_name': 'Dfki Pavoque Styles', 'gender': 'male', 'voice': 'dfki-pavoque-styles',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Pavoque Neutral Hsmm', 'gender': 'male', 'voice': 'dfki-pavoque-neutral-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Pavoque Neutral', 'gender': 'male', 'voice': 'dfki-pavoque-neutral',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Bits4', 'gender': 'female', 'voice': 'bits4',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Bits3 Hsmm', 'gender': 'male', 'voice': 'bits3-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Bits3', 'gender': 'male', 'voice': 'bits3',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Bits2', 'gender': 'male', 'voice': 'bits2',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Bits1 Hsmm', 'gender': 'female', 'voice': 'bits1-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Bits1', 'gender': 'female', 'voice': 'bits1',
-         "url": "http://mary.dfki.de:59125", "offline": False}
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60}
     ],
     'en-gb': [
         {'display_name': 'Dfki Spike Hsmm', 'gender': 'male', 'voice': 'dfki-spike-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Spike', 'gender': 'male', 'voice': 'dfki-spike',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Prudence Hsmm', 'gender': 'female', 'voice': 'dfki-prudence-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Prudence', 'gender': 'female', 'voice': 'dfki-prudence',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Poppy Hsmm', 'gender': 'female', 'voice': 'dfki-poppy-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Poppy', 'gender': 'female', 'voice': 'dfki-poppy',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Obadiah Hsmm', 'gender': 'male', 'voice': 'dfki-obadiah-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Obadiah', 'gender': 'male', 'voice': 'dfki-obadiah',
-         "url": "http://mary.dfki.de:59125", "offline": False}
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60}
     ],
     'en-us': [
         {'display_name': 'Cmu Slt Hsmm', 'gender': 'female', 'voice': 'cmu-slt-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Cmu Slt', 'gender': 'female', 'voice': 'cmu-slt',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Cmu Rms Hsmm', 'gender': 'male', 'voice': 'cmu-rms-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Cmu Rms', 'gender': 'male', 'voice': 'cmu-rms',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Cmu Bdl Hsmm', 'gender': 'male', 'voice': 'cmu-bdl-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Cmu Bdl', 'gender': 'male', 'voice': 'cmu-bdl',
-         "url": "http://mary.dfki.de:59125", "offline": False}
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60}
     ],
     'fr': [
         {'display_name': 'Upmc Pierre Hsmm', 'gender': 'male', 'voice': 'upmc-pierre-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Upmc Pierre', 'gender': 'male', 'voice': 'upmc-pierre',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Upmc Jessica Hsmm', 'gender': 'female', 'voice': 'upmc-jessica-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Upmc Jessica', 'gender': 'female', 'voice': 'upmc-jessica',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Enst Dennys Hsmm', 'gender': 'male', 'voice': 'enst-dennys-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Enst Camille Hsmm', 'gender': 'female', 'voice': 'enst-camille-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Enst Camille', 'gender': 'female', 'voice': 'enst-camille',
-         "url": "http://mary.dfki.de:59125", "offline": False}
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60}
     ],
     'it': [
         {'display_name': 'Istc Lucia Hsmm', 'gender': 'female', 'voice': 'istc-lucia-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False}
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60}
     ],
     'lb': [
         {'display_name': 'Marylux', 'gender': 'female', 'voice': 'marylux',
-         "url": "http://mary.dfki.de:59125", "offline": False}
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60}
     ],
     'te': [
         {'display_name': 'Cmu Nk Hsmm', 'gender': 'female', 'voice': 'cmu-nk-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False}
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60}
     ],
     'tr': [
         {'display_name': 'Dfki Ot Hsmm', 'gender': 'male', 'voice': 'dfki-ot-hsmm',
-         "url": "http://mary.dfki.de:59125", "offline": False},
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60},
         {'display_name': 'Dfki Ot', 'gender': 'male', 'voice': 'dfki-ot',
-         "url": "http://mary.dfki.de:59125", "offline": False}
+         "url": "http://mary.dfki.de:59125", "offline": False, "priority": 60}
     ]}
 
 
