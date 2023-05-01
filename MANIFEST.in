@@ -1,0 +1,3 @@
+recursive-include ovos_tts_plugin_marytts/ *
+include CHANGELOG.md
+include LICENSE
