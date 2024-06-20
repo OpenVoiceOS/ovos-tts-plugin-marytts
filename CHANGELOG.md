@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/e1b14d949688f3b915621ea46b2c8dffd017a28d...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/V0.0.1a1...HEAD)
+
+**Implemented enhancements:**
+
+- move ui data to "meta" [\#4](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/4) ([JarbasAl](https://github.com/JarbasAl))
+
+## [V0.0.1a1](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/V0.0.1a1) (2023-05-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/e1b14d949688f3b915621ea46b2c8dffd017a28d...V0.0.1a1)
 
 **Implemented enhancements:**
 
