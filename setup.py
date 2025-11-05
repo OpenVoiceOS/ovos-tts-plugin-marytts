@@ -50,7 +50,7 @@ def required(requirements_file):
                 if pkg.strip() and not pkg.startswith("#")]
     
 setup(
-    name='ovos-tts-plugin-marytts',
+    name='ovos_tts_plugin_marytts',
     version=get_version(),
     description='A marytts plugin for OpenVoiceOS',
     url='https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts',
