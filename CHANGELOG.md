@@ -1,45 +1,13 @@
 # Changelog
 
-## [0.0.1a3](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.0.1a3) (2026-01-23)
+## [0.1.1a2](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.1.1a2) (2026-01-23)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/V0.0.1a2...0.0.1a3)
-
-**Closed issues:**
-
-- Failed to load ovos-tts-plugin-marytts due to a missing file. [\#7](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/issues/7)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.1.0...0.1.1a2)
 
 **Merged pull requests:**
 
-- Update dependency python to 3.14 [\#12](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/12) ([renovate[bot]](https://github.com/apps/renovate))
-- Configure Renovate [\#11](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/11) ([renovate[bot]](https://github.com/apps/renovate))
-- Update requirements.txt [\#9](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/9) ([JarbasAl](https://github.com/JarbasAl))
-- fix: compatibility with ovos-plugin-manager 1.X.X [\#8](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/8) ([JarbasAl](https://github.com/JarbasAl))
-
-## [V0.0.1a2](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/V0.0.1a2) (2024-06-20)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/V0.0.1a1...V0.0.1a2)
-
-**Implemented enhancements:**
-
-- move ui data to "meta" [\#4](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/4) ([JarbasAl](https://github.com/JarbasAl))
-
-## [V0.0.1a1](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/V0.0.1a1) (2023-05-01)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/e1b14d949688f3b915621ea46b2c8dffd017a28d...V0.0.1a1)
-
-**Implemented enhancements:**
-
-- feat/available\_languages [\#2](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/2) ([NeonJarbas](https://github.com/NeonJarbas))
-- feat/sample\_configs [\#1](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/1) ([NeonJarbas](https://github.com/NeonJarbas))
-
-**Closed issues:**
-
-- MaryTTS [\#5](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/issues/5)
-
-**Merged pull requests:**
-
-- automations [\#6](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/6) ([emphasize](https://github.com/emphasize))
-- add "offline" metadata key [\#3](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/3) ([NeonJarbas](https://github.com/NeonJarbas))
+- chore\(deps\): update actions/setup-python action to v6 [\#17](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/17) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v6 [\#16](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/16) ([renovate[bot]](https://github.com/apps/renovate))
 
 
 
