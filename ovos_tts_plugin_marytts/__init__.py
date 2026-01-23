@@ -37,7 +37,7 @@ class MaryTTS(TTS):
             requests.RequestException: on network-related errors.
             ValueError: if a response line does not contain the expected fields.
         """
-        res = requests.get(self.url + "/voices")
+        res = requests.get(self.url + "/voices", timeout=5)
         res.raise_for_status()
         for entry in res.text.strip().split("\n"):
             voice, lang, gender, _ = entry.split()
@@ -62,12 +62,12 @@ class MaryTTS(TTS):
         if l2 not in self.valid_langs:
             l2 = l2.split("_")[0]
             if l2 not in self.valid_langs:
-                raise ValueError(f"unsupported language '{lang}' - available langs: {self.valid_langs}")
+                raise ValueError(f"unsupported language '{lang or self.lang}' - available langs: {self.valid_langs}")
 
         # TODO - validate voice/lang combo
         v = voice or self.voice
         if v and v not in self.valid_voices:
-            raise ValueError(f"unsupported voice '{voice}' - available voices: {self.valid_voices}")
+            raise ValueError(f"unsupported voice '{voice or self.voice}' - available voices: {self.valid_voices}")
 
 
         params = {
@@ -78,7 +78,7 @@ class MaryTTS(TTS):
             "OUTPUT_TYPE": "AUDIO",
             "AUDIO": "WAVE"
         }
-        resp = requests.get(self.url + "/process", params=params)
+        resp = requests.get(self.url + "/process", params=params, timeout=10)
         resp.raise_for_status()
         with open(wav_file, "wb") as f:
             f.write(resp.content)

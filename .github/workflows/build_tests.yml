@@ -7,7 +7,7 @@ on:
     branches:
       - dev
     paths-ignore:
-      - 'ovos_utils/version.py'
+      - 'ovos_tts_plugin_marytts/version.py'
       - 'test/**'
       - 'examples/**'
       - '.github/**'

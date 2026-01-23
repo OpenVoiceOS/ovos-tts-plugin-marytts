@@ -3,8 +3,6 @@ import os
 from setuptools import setup
 
 PLUGIN_ENTRY_POINT = 'ovos-tts-plugin-marytts = ovos_tts_plugin_marytts:MaryTTS'
-SAMPLE_CONFIGS = 'ovos-tts-plugin-marytts.config = ' \
-                 'ovos_tts_plugin_marytts:MaryTTSPluginConfig'
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -67,6 +65,5 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='mycroft plugin tts',
-    entry_points={'mycroft.plugin.tts': PLUGIN_ENTRY_POINT,
-                  'mycroft.plugin.tts.config': SAMPLE_CONFIGS}
+    entry_points={'mycroft.plugin.tts': PLUGIN_ENTRY_POINT}
 )
