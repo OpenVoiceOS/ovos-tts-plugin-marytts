@@ -6,6 +6,16 @@ from ovos_plugin_manager.templates.tts import TTS
 class MaryTTS(TTS):
 
     def __init__(self, config=None):
+        """
+        Initialize the MaryTTS client from a configuration dictionary and discover available voices and languages.
+        
+        Parameters:
+            config (dict): Configuration for the plugin. Must include the key 'url' pointing to the MaryTTS server.
+                Optionally may include 'voice' to set the default voice; if omitted, "cmu-slt-hsmm" is used.
+        
+        Raises:
+            ValueError: If 'url' is missing from the configuration.
+        """
         config = config or {}
         self.url = config.get('url')
         if not self.url:
@@ -17,6 +27,16 @@ class MaryTTS(TTS):
         self.update_voice_list()
 
     def update_voice_list(self):
+        """
+        Refresh the internal sets of supported voices and languages by querying the MaryTTS server.
+        
+        Performs an HTTP GET to the server's "/voices" endpoint, expects each response line to contain whitespace-separated fields starting with `voice` and `lang`, and adds each discovered voice to `self.valid_voices` and each language to `self.valid_langs`.
+        
+        Raises:
+            requests.HTTPError: if the HTTP response has an error status.
+            requests.RequestException: on network-related errors.
+            ValueError: if a response line does not contain the expected fields.
+        """
         res = requests.get(self.url + "/voices")
         res.raise_for_status()
         for entry in res.text.strip().split("\n"):
@@ -25,6 +45,18 @@ class MaryTTS(TTS):
             self.valid_langs.add(lang)
 
     def get_tts(self, sentence, wav_file, lang=None, voice=None):
+        """
+        Generate speech audio for `sentence` and save it to `wav_file`.
+        
+        Parameters:
+            sentence (str): Text to synthesize.
+            wav_file (str): Filesystem path where the resulting WAV data will be written.
+            lang (str, optional): Preferred language code (e.g. "en_US" or "en-us"). If the exact code is not supported the implementation will try the language prefix (text before '_'); raises ValueError if no supported language is found.
+            voice (str, optional): Preferred voice identifier. If provided and not available, a ValueError is raised.
+        
+        Returns:
+            tuple: (`wav_file`, None) where `wav_file` is the path to the written WAV file.
+        """
         l2 = lang or self.lang
         # TODO - use langcodes library to match lang instead
         if l2 not in self.valid_langs:
@@ -54,11 +86,11 @@ class MaryTTS(TTS):
 
     @property
     def available_languages(self) -> set:
-        """Return languages supported by this TTS implementation in this state
-        This property should be overridden by the derived class to advertise
-        what languages that engine supports.
+        """
+        Languages supported by this TTS instance in its current state.
+        
         Returns:
-            set: supported languages
+            set: Supported language codes discovered from the server (e.g., "en_US", "de").
         """
         # NOTE: if used as classproperty we don't know available langs
         return self.valid_langs
