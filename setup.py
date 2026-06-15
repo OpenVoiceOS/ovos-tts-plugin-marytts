@@ -57,6 +57,7 @@ setup(
     license='Apache2',
     packages=['ovos_tts_plugin_marytts'],
     install_requires=required("requirements/requirements.txt"),
+    extras_require={'test': ['ovoscope[tts]', 'pytest']},
     package_data={'': package_files('ovos_tts_plugin_marytts')},
     zip_safe=True,
     classifiers=[
