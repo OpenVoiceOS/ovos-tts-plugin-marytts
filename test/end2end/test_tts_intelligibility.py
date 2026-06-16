@@ -30,6 +30,6 @@ def test_tts_intelligibility():
     if not url:
         pytest.skip("requires MARYTTS_URL (a running MaryTTS server)")
     tts = MaryTTS({"url": url})
-    report = score_tts_intelligibility(tts, PHRASES, lang=LANG)
+    report = score_tts_intelligibility(tts, PHRASES, lang=LANG, mode="direct")
     print("::TTS-INTELLIGIBILITY:: " + json.dumps(report.to_dict()))
     assert report.mean_wer <= float(os.environ.get("TTS_MAX_WER", "1.0"))
