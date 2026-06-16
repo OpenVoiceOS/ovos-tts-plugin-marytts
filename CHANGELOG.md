@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2a1](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.1.2a1) (2026-06-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.1.1a4...0.1.2a1)
+
+**Merged pull requests:**
+
+- fix: require ovos-plugin-manager\>=2.1.0 for opm.\* entry points and cap ovos-\* deps at next major [\#28](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/28) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.1a4](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.1.1a4) (2026-06-16)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.1.1a2...0.1.1a4)
