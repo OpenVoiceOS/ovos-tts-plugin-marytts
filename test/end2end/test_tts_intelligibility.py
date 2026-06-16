@@ -7,6 +7,7 @@ credentials. A small fixed set of English phrases is synthesised, transcribed
 back with the ovoscope reference STT, and scored with word error rate.
 """
 import os
+import json
 
 import pytest
 
@@ -30,5 +31,5 @@ def test_tts_intelligibility():
         pytest.skip("requires MARYTTS_URL (a running MaryTTS server)")
     tts = MaryTTS({"url": url})
     report = score_tts_intelligibility(tts, PHRASES, lang=LANG)
-    print(f"::TTS-INTELLIGIBILITY:: {report.to_dict()}")
+    print("::TTS-INTELLIGIBILITY:: " + json.dumps(report.to_dict()))
     assert report.mean_wer <= float(os.environ.get("TTS_MAX_WER", "1.0"))
