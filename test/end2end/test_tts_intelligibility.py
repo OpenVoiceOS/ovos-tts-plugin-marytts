@@ -15,6 +15,13 @@ from ovoscope.tts_intelligibility import score_tts_intelligibility
 
 from ovos_tts_plugin_marytts import MaryTTS
 
+# MaryTTS needs a running MaryTTS server (MARYTTS_URL). A missing server is NOT
+# a failure: skip cleanly when no server URL is configured.
+pytestmark = pytest.mark.skipif(
+    not os.environ.get("MARYTTS_URL"),
+    reason="MARYTTS_URL not set — requires a running MaryTTS server, cannot synthesize in CI",
+)
+
 LANG = "en-US"
 PHRASES = [
     "hello world",
@@ -27,8 +34,6 @@ PHRASES = [
 
 def test_tts_intelligibility():
     url = os.environ.get("MARYTTS_URL")
-    if not url:
-        pytest.skip("requires MARYTTS_URL (a running MaryTTS server)")
     tts = MaryTTS({"url": url})
     report = score_tts_intelligibility(tts, PHRASES, lang=LANG, mode="direct")
     print("::TTS-INTELLIGIBILITY:: " + json.dumps(report.to_dict()))
