@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos_tts_plugin_marytts"
+dynamic = ["version"]
+description = "A marytts plugin for OpenVoiceOS"
+license = {text = "Apache2"}
+authors = [
+    {name = "jarbasAi", email = "jarbasai@mailfence.com"}
+]
+keywords = ["mycroft", "plugin", "tts"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: Text Processing :: Linguistic",
+    "Programming Language :: Python :: 3.6",
+]
+dependencies = [
+    "ovos-plugin-manager>=2.1.0,<3.0.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "ovoscope[tts]",
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts"
+
+[project.entry-points."opm.tts"]
+"ovos-tts-plugin-marytts" = "ovos_tts_plugin_marytts:MaryTTS"
+
+[tool.setuptools.dynamic]
+version = {attr = "ovos_tts_plugin_marytts.version.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ovos_tts_plugin_marytts*"]
+
+[tool.setuptools.package-data]
+ovos_tts_plugin_marytts = ["*"]
