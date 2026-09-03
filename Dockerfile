@@ -6,7 +6,7 @@
 # its own is useless without a reachable MaryTTS server. Use the provided
 # docker-compose.yml, which starts a MaryTTS server sidecar and points this container
 # at it, or set MARYTTS_URL to your own server.
-FROM python:3.11-slim
+FROM python:3.14-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         git \
