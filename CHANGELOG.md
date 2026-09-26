@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0a3](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.2.0a3) (2026-09-26)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.2.0a2...0.2.0a3)
+
+**Merged pull requests:**
+
+- chore\(ci\): drop the broken Dependabot config [\#39](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/39) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.2.0a2](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.2.0a2) (2026-08-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.2.0a1...0.2.0a2)
