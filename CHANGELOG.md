@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0a5](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.2.0a5) (2026-09-26)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.2.0a4...0.2.0a5)
+
+**Merged pull requests:**
+
+- Update docker/build-push-action action to v7 [\#33](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/33) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.2.0a4](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.2.0a4) (2026-09-26)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.2.0a3...0.2.0a4)
