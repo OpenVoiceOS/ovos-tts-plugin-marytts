@@ -1,3 +1,5 @@
+from typing import Optional
+
 import requests
 from ovos_utils import classproperty
 from ovos_plugin_manager.templates.tts import TTS
@@ -44,6 +46,21 @@ class MaryTTS(TTS):
             self.valid_voices.add(voice)
             self.valid_langs.add(lang)
 
+    def match_lang(self, lang: str) -> Optional[str]:
+        """
+        Find the server locale for an OVOS language code.
+
+        OVOS passes BCP-47 tags such as "en-US", and MaryTTS lists Java locales
+        such as "en_US". The match ignores case and the "-"/"_" separator, then
+        falls back to the base language ("en-US" -> "en").
+
+        Returns:
+            str: the locale as the server spells it, or None if the server has no match.
+        """
+        wanted = lang.replace("_", "-").lower()
+        by_key = {l.replace("_", "-").lower(): l for l in self.valid_langs}
+        return by_key.get(wanted) or by_key.get(wanted.split("-")[0])
+
     def get_tts(self, sentence, wav_file, lang=None, voice=None):
         """
         Generate speech audio for `sentence` and save it to `wav_file`.
@@ -51,18 +68,15 @@ class MaryTTS(TTS):
         Parameters:
             sentence (str): Text to synthesize.
             wav_file (str): Filesystem path where the resulting WAV data will be written.
-            lang (str, optional): Preferred language code (e.g. "en_US" or "en-us"). If the exact code is not supported the implementation will try the language prefix (text before '_'); raises ValueError if no supported language is found.
+            lang (str, optional): Preferred language code (e.g. "en-US" or "en_US"). It is matched against the server's locales by match_lang; raises ValueError if no supported language is found.
             voice (str, optional): Preferred voice identifier. If provided and not available, a ValueError is raised.
         
         Returns:
             tuple: (`wav_file`, None) where `wav_file` is the path to the written WAV file.
         """
-        l2 = lang or self.lang
-        # TODO - use langcodes library to match lang instead
-        if l2 not in self.valid_langs:
-            l2 = l2.split("_")[0]
-            if l2 not in self.valid_langs:
-                raise ValueError(f"unsupported language '{lang or self.lang}' - available langs: {self.valid_langs}")
+        l2 = self.match_lang(lang or self.lang)
+        if l2 is None:
+            raise ValueError(f"unsupported language '{lang or self.lang}' - available langs: {self.valid_langs}")
 
         # TODO - validate voice/lang combo
         v = voice or self.voice
