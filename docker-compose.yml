@@ -1,0 +1,31 @@
+services:
+  # External MaryTTS synthesis backend. This plugin CANNOT synthesize on its own; it
+  # is a client to this server. synesthesiam/marytts:5.2 bundles 19 HSMM voices for 8
+  # languages and serves the MaryTTS HTTP API on port 59125.
+  marytts:
+    image: synesthesiam/marytts:5.2
+    container_name: marytts
+    restart: unless-stopped
+    ports:
+      - "59125:59125"
+
+  # The OVOS TTS server exposing the ElevenLabs-compatible API on 9666, backed by the
+  # MaryTTS server above (reached at http://marytts:59125 on the compose network).
+  marytts-tts:
+    image: ghcr.io/openvoiceos/ovos-tts-plugin-marytts:latest
+    # …or build locally: build: .
+    container_name: marytts-tts
+    restart: unless-stopped
+    depends_on:
+      - marytts
+    ports:
+      - "9666:9666"
+    # url + voice are baked as build args (default http://marytts:59125, cmu-slt-hsmm).
+    # To target a different MaryTTS server or voice, rebuild with:
+    #   build: { context: ., args: { MARYTTS_URL: http://host:59125, MARYTTS_VOICE: dfki-spike-hsmm } }
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9666/status')"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
