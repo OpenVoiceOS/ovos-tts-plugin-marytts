@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1a2](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.2.1a2) (2026-10-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.2.1a1...0.2.1a2)
+
+**Merged pull requests:**
+
+- refactor: match locales with ovos-spec-tools [\#45](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/pull/45) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.2.1a1](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/tree/0.2.1a1) (2026-10-20)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-tts-plugin-marytts/compare/0.2.0a5...0.2.1a1)
