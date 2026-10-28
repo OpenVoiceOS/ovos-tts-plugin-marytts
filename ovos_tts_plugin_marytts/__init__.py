@@ -1,6 +1,7 @@
 from typing import Optional
 
 import requests
+from ovos_spec_tools.language import closest_lang, standardize_lang
 from ovos_utils import classproperty
 from ovos_plugin_manager.templates.tts import TTS
 
@@ -51,15 +52,17 @@ class MaryTTS(TTS):
         Find the server locale for an OVOS language code.
 
         OVOS passes BCP-47 tags such as "en-US", and MaryTTS lists Java locales
-        such as "en_US". The match ignores case and the "-"/"_" separator, then
-        falls back to the base language ("en-US" -> "en").
+        such as "en_US". The match follows OVOS-INTENT-2 section 2: it ignores
+        case and the "-"/"_" separator, prefers an exact tag, and accepts the
+        nearest regional variant.
 
         Returns:
             str: the locale as the server spells it, or None if the server has no match.
         """
-        wanted = lang.replace("_", "-").lower()
-        by_key = {l.replace("_", "-").lower(): l for l in self.valid_langs}
-        return by_key.get(wanted) or by_key.get(wanted.split("-")[0])
+        locales = sorted(self.valid_langs)
+        wanted = standardize_lang(lang)
+        exact = next((l for l in locales if standardize_lang(l) == wanted), None)
+        return exact or closest_lang(lang, locales)
 
     def get_tts(self, sentence, wav_file, lang=None, voice=None):
         """
